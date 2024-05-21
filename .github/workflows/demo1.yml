@@ -14,8 +14,9 @@ on:
       - main # main
       - 'dev-*' # dev-new dev-this-is-new
       - 'feat/**' # Double asterisks would allow even further slashes 
-    paths-ignore:
-      - '.github/workflows/*'
+    # paths-ignore: aha
+    #   - '.github/workflows/*'
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
