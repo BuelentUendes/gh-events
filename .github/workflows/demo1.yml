@@ -4,8 +4,18 @@ on:
     # Specify activity types that trigger this workflow
     types: 
       - opened
+    branches:
+      - main
     # I need to add a colon nevertheless
   workflow_dispatch:
+  push:
+    # Only pushes to the main branch should trigger this workflow
+    branches:
+      - main # main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feat/**' # Double asterisks would allow even further slashes 
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
