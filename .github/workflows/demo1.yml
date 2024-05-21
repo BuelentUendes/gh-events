@@ -1,5 +1,11 @@
 name: Events Demo 1
-on: ...
+on: 
+  pull_request:
+    # Specify activity types that trigger this workflow
+    types: 
+      - opened
+    # I need to add a colon nevertheless
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
